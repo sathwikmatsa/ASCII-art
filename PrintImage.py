@@ -34,5 +34,6 @@ if im != None:
 
 	for row in range(height):
 		for col in range(width):
-			print(asciiMatrix[width*row + col],end="")
+			for i in range(3): #problem 1 - image looks squahed: so printing each character 3x
+				print(asciiMatrix[width*row + col],end="")
 		print("")
