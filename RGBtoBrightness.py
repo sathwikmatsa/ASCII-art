@@ -17,7 +17,6 @@ if im != None:
 	pix = im.load()
 	width, height = im.size
 	bright = [None]*(width*height)
-	print(width)
 	for col in range(width):
 		for row in range(height):
 			bright[width*row + col] = Average(pix[col,row])
