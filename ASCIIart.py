@@ -73,25 +73,35 @@ wi, hi = im.size
 
 rs = args.width/args.height
 ri = wi/hi
-
+#fit image to screen retaining aspect ratio
 new_size = (int(wi* args.height/hi), args.height) if rs > ri else (args.width, int(hi * args.width/wi))
 
 r_im = im.resize(new_size, Image.ANTIALIAS)
 
 if r_im != None:
+	## Load your image’s pixel data into a 2-dimensional array
+
 	pix = r_im.load()
 	width, height = r_im.size
-	print(r_im.size)
+	#print(r_im.size)
+	
+	## Convert the RGB tuples of your pixels into single brightness numbers
+
 	bright = [None]*(width*height)
 	pixColor = [None]*(width*height)
 	for col in range(width):
 		for row in range(height):
 			bright[width*row + col] = invert(brightnessMapping(pix[col,row], args.map)) if args.invert else brightnessMapping(pix[col,row], args.map)
 			pixColor[width*row + col] = reduceColor(pix[col,row])
+	
+	## Convert brightness numbers to ASCII characters
+
 	asciiMatrix = [None]*(width*height)
 	for col in range(width):
 		for row in range(height):
 			asciiMatrix[width*row + col] = toASCII((bright[width*row + col]))
+
+	## Print image
 
 	for row in range(height):
 		for col in range(width):
