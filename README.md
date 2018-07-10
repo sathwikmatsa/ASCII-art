@@ -22,14 +22,14 @@ python ASCIIart.py [-h] [-c] [-i] [-m {0,1,2}] [-ws WIDTH] [-hs HEIGHT]
 - positional arguments:
   * filename
 - optional arguments:
-  * -h, --help            : show this help message and exit
-  * -c, --color           : ASCII art in glorious color
-  * -i, --invert          : invert all the brightnesses
-  * -m {0,1,2}, --map {0,1,2} 
+  * `-h, --help`            : show this help message and exit
+  * `-c, --color`           : ASCII art in glorious color
+  * `-i, --invert`          : invert all the brightnesses
+  * `-m {0,1,2}, --map {0,1,2}` 
                           : brightness mappings: 0 for average, 1 for lightness, 2 for luminosity
-  * -ws WIDTH, --width WIDTH
+  * `-ws WIDTH, --width WIDTH`
                           : width of the screen
-  * -hs HEIGHT, --height HEIGHT
+  * `-hs HEIGHT, --height HEIGHT`
                           : height of the screen
                           
   `Use trial and error to work out the largest image that you can display on your terminal by using params -ws and -hs.`
